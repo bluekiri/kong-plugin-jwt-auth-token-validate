@@ -10,13 +10,7 @@ local policy_ALL = 'all'
 local policy_ANY = 'any'
 
 local function retrieve_token(request, conf)
-    local uri_parameters = request.get_uri_args()
-  
-    for _, v in ipairs(conf.uri_param_names) do
-      if uri_parameters[v] then
-        return uri_parameters[v]
-      end
-    end
+
     local authorization_header = request.get_headers()["authorization"]
     if authorization_header then
         local iterator, iter_err = ngx_re_gmatch(authorization_header, "\\s*[Bb]earer\\s+(.+)")
@@ -52,20 +46,20 @@ function JWTValidateHandler:access(conf)
     if err and not continue_on_error then
       return responses.send_HTTP_INTERNAL_SERVER_ERROR()
     end
-
+    local claims = jwt.claims
     local issuer = conf.issuer
     local audience = conf.audience
     if claims["iss"] == nil then
         return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has null issuer")
     end
     if claims["iss"]~=issuer then
-        return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has invalid issuer '"..claims["iis"].."'")
+        return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has invalid issuer '"..claims["iss"].."'")
     end
     if claims["aud"] == nil then
-        return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has null issuer")
+        return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has null audience")
     end
     if claims["aud"]~=audience then
-        return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has invalid aucience '"..claims["aud"].."'")
+        return responses.send_HTTP_UNAUTHORIZED("JSON Web Token has invalid audience '"..claims["aud"].."'")
     end
   
 end

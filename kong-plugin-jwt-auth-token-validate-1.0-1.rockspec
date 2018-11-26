@@ -1,7 +1,9 @@
 package = "kong-plugin-jwt-auth-token-validate"
 version = "1.0-1"
+
 source = {
-   url = "git+https://github.com/ellull/kong-validate.git"
+   url = "git+https://github.com/ellull/kong-validate.git",
+   tag = "0.1.0"
 }
 description = {
    summary = "A Kong plugin to validate JWT access tokens issuer and audience claim values",
@@ -14,7 +16,7 @@ dependencies = {
 build = {
    type = "builtin",
    modules = {
-      ["kong.plugins.jwt-auth-token-validate.handler"] = "handler.lua",
-      ["kong.plugins.jwt-auth-token-validate.schema"] = "schema.lua"
+      ["kong.plugins.jwt-auth-token-validate.handler"] = "kong/plugins/jwt-auth-token-validate/handler.lua",
+      ["kong.plugins.jwt-auth-token-validate.schema"] = "kong/plugins/jwt-auth-token-validate/schema.lua"
    }
 }
