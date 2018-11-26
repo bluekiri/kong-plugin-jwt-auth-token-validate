@@ -2,12 +2,12 @@ package = "kong-plugin-jwt-auth-token-validate"
 version = "1.0-1"
 
 source = {
-   url = "git+https://github.com/ellull/kong-validate.git",
+   url = "git+https://github.com/bluekiri/kong-plugin-jwt-auth-token-validate.git",
    tag = "0.1.0"
 }
 description = {
    summary = "A Kong plugin to validate JWT access tokens issuer and audience claim values",
-   homepage = "https://github.com/ellull/kong-validate",
+   homepage = "https://github.com/bluekiri/kong-plugin-jwt-auth-token-validate",
    license = "MIT"
 }
 dependencies = {
