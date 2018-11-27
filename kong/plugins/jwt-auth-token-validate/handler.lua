@@ -6,6 +6,8 @@ local ngx_re_gmatch = ngx.re.gmatch
 
 local JWTValidateHandler = BasePlugin:extend()
 
+JWTValidateHandler.PRIORITY = 990
+
 local policy_ALL = 'all'
 local policy_ANY = 'any'
 
