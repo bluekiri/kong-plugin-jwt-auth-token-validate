@@ -1,5 +1,5 @@
 package = "kong-plugin-jwt-auth-token-validate"
-version = "1.0-2"
+version = "2.0-0"
 
 source = {
    url = "git://github.com/bluekiri/kong-plugin-jwt-auth-token-validate",
@@ -11,7 +11,7 @@ description = {
    license = "MIT"
 }
 dependencies = {
-   "lua ~> 5.1"
+   "lua ~> 5.3"
 }
 build = {
    type = "builtin",
