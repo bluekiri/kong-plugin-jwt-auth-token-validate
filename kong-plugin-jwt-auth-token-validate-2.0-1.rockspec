@@ -1,9 +1,9 @@
 package = "kong-plugin-jwt-auth-token-validate"
-version = "2.0-0"
+version = "2.0-1"
 
 source = {
    url = "git://github.com/bluekiri/kong-plugin-jwt-auth-token-validate",
-   tag = "v1.0"
+   tag = "v1.1"
 }
 description = {
    summary = "A Kong plugin to validate JWT access tokens issuer and audience claim values",
@@ -17,6 +17,7 @@ build = {
    type = "builtin",
    modules = {
       ["kong.plugins.jwt-auth-token-validate.handler"] = "kong/plugins/jwt-auth-token-validate/handler.lua",
-      ["kong.plugins.jwt-auth-token-validate.schema"] = "kong/plugins/jwt-auth-token-validate/schema.lua"
+      ["kong.plugins.jwt-auth-token-validate.schema"] = "kong/plugins/jwt-auth-token-validate/schema.lua",
+      
    }
 }
