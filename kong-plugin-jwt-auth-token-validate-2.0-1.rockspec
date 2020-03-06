@@ -3,7 +3,7 @@ version = "2.0-1"
 
 source = {
    url = "git://github.com/bluekiri/kong-plugin-jwt-auth-token-validate",
-   tag = "v1.0"
+   tag = "v1.1"
 }
 description = {
    summary = "A Kong plugin to validate JWT access tokens issuer and audience claim values",
