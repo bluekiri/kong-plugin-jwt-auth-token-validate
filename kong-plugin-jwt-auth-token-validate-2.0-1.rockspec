@@ -2,7 +2,7 @@ package = "kong-plugin-jwt-auth-token-validate"
 version = "2.0-1"
 
 source = {
-   url = "git://github.com/bluekiri/kong-plugin-jwt-auth-token-validate",
+   url = "git+https://github.com/bluekiri/kong-plugin-jwt-auth-token-validate",
    tag = "v1.1"
 }
 description = {
