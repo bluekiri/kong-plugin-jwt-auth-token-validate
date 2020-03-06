@@ -11,12 +11,14 @@ description = {
    license = "MIT"
 }
 dependencies = {
-   "lua ~> 5.3"
+   "lua ~> 5.1"
 }
 build = {
    type = "builtin",
    modules = {
       ["kong.plugins.jwt-auth-token-validate.handler"] = "kong/plugins/jwt-auth-token-validate/handler.lua",
-      ["kong.plugins.jwt-auth-token-validate.schema"] = "kong/plugins/jwt-auth-token-validate/schema.lua"
+      ["kong.plugins.jwt-auth-token-validate.validate"] = "kong/plugins/jwt-auth-token-validate/validate.lua",
+      ["kong.plugins.jwt-auth-token-validate.schema"] = "kong/plugins/jwt-auth-token-validate/schema.lua",
+      
    }
 }
